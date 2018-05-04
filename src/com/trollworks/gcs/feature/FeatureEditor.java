@@ -40,55 +40,57 @@ import javax.swing.text.DefaultFormatterFactory;
 /** A generic feature editor panel. */
 public abstract class FeatureEditor extends EditorPanel {
     @Localize("Add a feature")
-    @Localize(locale = "de", value = "Eine Eigenschaft hinzufügen")
-    @Localize(locale = "ru", value = "Добавить особенность")
-    @Localize(locale = "es", value = "Añade una característica")
+    @Localize(locale = "de", value = "Eine Eigenschaft hinzufÃ¼gen")
+    @Localize(locale = "ru", value = "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð¾Ñ�Ð¾Ð±ÐµÐ½Ð½Ð¾Ñ�Ñ‚ÑŒ")
+    @Localize(locale = "es", value = "AÃ±ade una caracterÃ­stica")
     private static String ADD_FEATURE_TOOLTIP;
     @Localize("Remove this feature")
     @Localize(locale = "de", value = "Diese Eigenschaft entfernen")
-    @Localize(locale = "ru", value = "Убрать эту особенность")
-    @Localize(locale = "es", value = "Eliminar esta característica")
+    @Localize(locale = "ru", value = "Ð£Ð±Ñ€Ð°Ñ‚ÑŒ Ñ�Ñ‚Ñƒ Ð¾Ñ�Ð¾Ð±ÐµÐ½Ð½Ð¾Ñ�Ñ‚ÑŒ")
+    @Localize(locale = "es", value = "Eliminar esta caracterÃ­stica")
     private static String REMOVE_FEATURE_TOOLTIP;
     @Localize("Gives an attribute bonus of")
     @Localize(locale = "de", value = "Gibt einen Attributs-Bonus von")
-    @Localize(locale = "ru", value = "Даёт премию атрибуту")
-    @Localize(locale = "es", value = "Da una bonificación al atributo de")
+    @Localize(locale = "ru", value = "Ð”Ð°Ñ‘Ñ‚ Ð¿Ñ€ÐµÐ¼Ð¸ÑŽ Ð°Ñ‚Ñ€Ð¸Ð±ÑƒÑ‚Ñƒ")
+    @Localize(locale = "es", value = "Da una bonificaciÃ³n al atributo de")
     private static String ATTRIBUTE_BONUS;
     @Localize("Reduces the attribute cost of")
     @Localize(locale = "de", value = "Reduziert die Attributskosten von")
-    @Localize(locale = "ru", value = "Снижает стоимость атрибута")
+    @Localize(locale = "ru", value = "Ð¡Ð½Ð¸Ð¶Ð°ÐµÑ‚ Ñ�Ñ‚Ð¾Ð¸Ð¼Ð¾Ñ�Ñ‚ÑŒ Ð°Ñ‚Ñ€Ð¸Ð±ÑƒÑ‚Ð°")
     @Localize(locale = "es", value = "Reduce el coste del atributo en ")
     private static String COST_REDUCTION;
     @Localize("Reduces the contained weight by")
     private static String CONTAINED_WEIGHT_REDUCTION;
     @Localize("Gives a DR bonus of")
     @Localize(locale = "de", value = "Gibt einen SR-Bonus von")
-    @Localize(locale = "ru", value = "Даёт премию СП")
-    @Localize(locale = "es", value = "Da una bonificación a RD de ")
+    @Localize(locale = "ru", value = "Ð”Ð°Ñ‘Ñ‚ Ð¿Ñ€ÐµÐ¼Ð¸ÑŽ Ð¡ÐŸ")
+    @Localize(locale = "es", value = "Da una bonificaciÃ³n a RD de ")
     private static String DR_BONUS;
+    @Localize("Gives Edge Protection of")
+    private static String EDGE_PROTECTION;
     @Localize("Gives a skill level bonus of")
     @Localize(locale = "de", value = "Gibt einen Fertigkeitswert-Bonus von")
-    @Localize(locale = "ru", value = "Даёт премию к уровню умения")
-    @Localize(locale = "es", value = "Da una bonificación a la habilidad de")
+    @Localize(locale = "ru", value = "Ð”Ð°Ñ‘Ñ‚ Ð¿Ñ€ÐµÐ¼Ð¸ÑŽ Ðº ÑƒÑ€Ð¾Ð²Ð½ÑŽ ÑƒÐ¼ÐµÐ½Ð¸Ñ�")
+    @Localize(locale = "es", value = "Da una bonificaciÃ³n a la habilidad de")
     private static String SKILL_BONUS;
     @Localize("Gives a spell level bonus of")
-    @Localize(locale = "de", value = "Gibt für Zauber einen Fertigkeitswert-Bonus von")
-    @Localize(locale = "ru", value = "Даёт премию у уровню заклинания")
-    @Localize(locale = "es", value = "Da una bonificación al sortilegio de")
+    @Localize(locale = "de", value = "Gibt fÃ¼r Zauber einen Fertigkeitswert-Bonus von")
+    @Localize(locale = "ru", value = "Ð”Ð°Ñ‘Ñ‚ Ð¿Ñ€ÐµÐ¼Ð¸ÑŽ Ñƒ ÑƒÑ€Ð¾Ð²Ð½ÑŽ Ð·Ð°ÐºÐ»Ð¸Ð½Ð°Ð½Ð¸Ñ�")
+    @Localize(locale = "es", value = "Da una bonificaciÃ³n al sortilegio de")
     private static String SPELL_BONUS;
     @Localize("Gives a weapon damage bonus of")
     @Localize(locale = "de", value = "Gibt einen Waffen-Schaden-Bonus von")
-    @Localize(locale = "ru", value = "Даёт премию к урону от оружия")
-    @Localize(locale = "es", value = "Da una bonificación al daño de")
+    @Localize(locale = "ru", value = "Ð”Ð°Ñ‘Ñ‚ Ð¿Ñ€ÐµÐ¼Ð¸ÑŽ Ðº ÑƒÑ€Ð¾Ð½Ñƒ Ð¾Ñ‚ Ð¾Ñ€ÑƒÐ¶Ð¸Ñ�")
+    @Localize(locale = "es", value = "Da una bonificaciÃ³n al daÃ±o de")
     private static String WEAPON_BONUS;
     @Localize("per level")
     @Localize(locale = "de", value = "je Stufe")
-    @Localize(locale = "ru", value = "за уровень")
+    @Localize(locale = "ru", value = "Ð·Ð° ÑƒÑ€Ð¾Ð²ÐµÐ½ÑŒ")
     @Localize(locale = "es", value = "por nivel")
     private static String PER_LEVEL;
     @Localize("per die")
-    @Localize(locale = "de", value = "je Würfel")
-    @Localize(locale = "ru", value = "за кубик")
+    @Localize(locale = "de", value = "je WÃ¼rfel")
+    @Localize(locale = "ru", value = "Ð·Ð° ÐºÑƒÐ±Ð¸Ðº")
     @Localize(locale = "es", value = "por dado")
     private static String PER_DIE;
 
@@ -96,9 +98,9 @@ public abstract class FeatureEditor extends EditorPanel {
         Localization.initialize();
     }
 
-    private static final String     CHANGE_BASE_TYPE = "ChangeBaseType";                                                                                                                                                                                                                                                                                                                                                                                                                                                      																																						//$NON-NLS-1$
-    private static final String     BLANK            = " ";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             																																									//$NON-NLS-1$
-    private static final Class<?>[] BASE_TYPES       = new Class<?>[] { AttributeBonus.class, DRBonus.class, SkillBonus.class, SpellBonus.class, WeaponBonus.class, CostReduction.class, ContainedWeightReduction.class };
+    private static final String     CHANGE_BASE_TYPE = "ChangeBaseType";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            																																						//$NON-NLS-1$
+    private static final String     BLANK            = " ";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    																																									//$NON-NLS-1$
+    private static final Class<?>[] BASE_TYPES       = new Class<?>[] { AttributeBonus.class, DRBonus.class, EdgeProtection.class, SkillBonus.class, SpellBonus.class, WeaponBonus.class, CostReduction.class, ContainedWeightReduction.class };
     private static Class<?>         LAST_ITEM_TYPE   = SkillBonus.class;
     private ListRow                 mRow;
     private Feature                 mFeature;
@@ -118,6 +120,9 @@ public abstract class FeatureEditor extends EditorPanel {
         }
         if (feature instanceof DRBonus) {
             return new DRBonusEditor(row, (DRBonus) feature);
+        }
+        if (feature instanceof EdgeProtection) {
+            return new EdgeProtectionEditor(row, (EdgeProtection) feature);
         }
         if (feature instanceof SkillBonus) {
             return new SkillBonusEditor(row, (SkillBonus) feature);
@@ -183,6 +188,7 @@ public abstract class FeatureEditor extends EditorPanel {
         List<String> choices = new ArrayList<>();
         choices.add(ATTRIBUTE_BONUS);
         choices.add(DR_BONUS);
+        choices.add(EDGE_PROTECTION);
         choices.add(SKILL_BONUS);
         choices.add(SPELL_BONUS);
         choices.add(WEAPON_BONUS);

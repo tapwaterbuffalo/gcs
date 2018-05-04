@@ -73,6 +73,12 @@ public class HitLocationPanel extends DropPanel {
     @Localize(locale = "es", value = "Total de RD ue protege la localización <b>{0}</b>")
     private static String DR_TOOLTIP;
 
+    @Localize("I")
+    private static String IMPALING_EP;
+
+    @Localize("C")
+    private static String CUTTING_EP;
+
     static {
         Localization.initialize();
     }
@@ -85,7 +91,7 @@ public class HitLocationPanel extends DropPanel {
      * @param sheet The sheet to display the data for.
      */
     public HitLocationPanel(CharacterSheet sheet) {
-        super(new ColumnLayout(7, 2, 0), HIT_LOCATION);
+        super(new ColumnLayout(9, 2, 0), HIT_LOCATION);
         mSheet = sheet;
 
         GURPSCharacter character = mSheet.getCharacter();
@@ -122,10 +128,14 @@ public class HitLocationPanel extends DropPanel {
 
         createDivider();
 
-        wrapper = new Wrapper(new ColumnLayout(1, 2, 0));
+        wrapper = new Wrapper(new ColumnLayout(3, 2, 0));
         header = createHeader(wrapper, DR, null);
+        header = createHeader(wrapper, IMPALING_EP, null);
+        header = createHeader(wrapper, CUTTING_EP, null);
         for (HitLocationTableEntry entry : table.getEntries()) {
-            createDisabledField(wrapper, mSheet, entry.getKey(), MessageFormat.format(DR_TOOLTIP, entry.getName()), SwingConstants.RIGHT);
+            createDisabledField(wrapper, mSheet, entry.getKey(), MessageFormat.format(DR_TOOLTIP, entry.getName()), SwingConstants.CENTER);
+            createDisabledField(wrapper, mSheet, entry.getKey().replace(Armor.DR_PREFIX, Armor.EP_PREFIX) + Armor.IMPALING_SUFFIX, MessageFormat.format(DR_TOOLTIP, entry.getName()), SwingConstants.CENTER);
+            createDisabledField(wrapper, mSheet, entry.getKey().replace(Armor.DR_PREFIX, Armor.EP_PREFIX) + Armor.CUTTING_SUFFIX, MessageFormat.format(DR_TOOLTIP, entry.getName()), SwingConstants.CENTER);
         }
         wrapper.setAlignmentY(TOP_ALIGNMENT);
         add(wrapper);

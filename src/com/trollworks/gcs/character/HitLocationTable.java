@@ -55,9 +55,9 @@ public class HitLocationTable implements Comparable<HitLocationTable> {
     private static String                             ICHTHYOID_TITLE;
     @Localize("Arachnoid")
     private static String                             ARACHNOID_TITLE;
-    @Localize("Left Leg")
+    @Localize("L Leg")
     private static String                             LEFT_LEG_TITLE;
-    @Localize("Right Leg")
+    @Localize("R Leg")
     private static String                             RIGHT_LEG_TITLE;
     @Localize("Foreleg")
     private static String                             FORELEG_TITLE;
@@ -73,9 +73,9 @@ public class HitLocationTable implements Comparable<HitLocationTable> {
     private static String                             LEG56_TITLE;
     @Localize("Leg 7-8")
     private static String                             LEG78_TITLE;
-    @Localize("Left Arm")
+    @Localize("L Arm")
     private static String                             LEFT_ARM_TITLE;
-    @Localize("Right Arm")
+    @Localize("R Arm")
     private static String                             RIGHT_ARM_TITLE;
     @Localize("Arm 1-2")
     private static String                             ARM12_TITLE;
@@ -88,22 +88,22 @@ public class HitLocationTable implements Comparable<HitLocationTable> {
     @Localize("Extremity")
     private static String                             EXTREMITY_TITLE;
 
-    public static final String                        KEY_HUMANOID         = "humanoid";        			//$NON-NLS-1$
-    public static final String                        KEY_QUADRUPED        = "quadruped";       			//$NON-NLS-1$
+    public static final String                        KEY_HUMANOID         = "humanoid";                			//$NON-NLS-1$
+    public static final String                        KEY_QUADRUPED        = "quadruped";              			//$NON-NLS-1$
     public static final String                        KEY_WINGED_QUADRUPED = "winged_quadruped";	//$NON-NLS-1$
-    public static final String                        KEY_HEXAPOD          = "hexapod";         			//$NON-NLS-1$
-    public static final String                        KEY_WINGED_HEXAPOD   = "winged_hexapod";  		//$NON-NLS-1$
-    public static final String                        KEY_CENTAUR          = "centaur";         			//$NON-NLS-1$
-    public static final String                        KEY_AVIAN            = "avian";           				//$NON-NLS-1$
-    public static final String                        KEY_VERMIFORM        = "vermiform";       			//$NON-NLS-1$
+    public static final String                        KEY_HEXAPOD          = "hexapod";                  			//$NON-NLS-1$
+    public static final String                        KEY_WINGED_HEXAPOD   = "winged_hexapod";    		//$NON-NLS-1$
+    public static final String                        KEY_CENTAUR          = "centaur";                  			//$NON-NLS-1$
+    public static final String                        KEY_AVIAN            = "avian";                      				//$NON-NLS-1$
+    public static final String                        KEY_VERMIFORM        = "vermiform";              			//$NON-NLS-1$
     public static final String                        KEY_WINGED_VERMIFORM = "winged_vermiform";	//$NON-NLS-1$
-    public static final String                        KEY_SNAKEMEN         = "snakemen";        			//$NON-NLS-1$
-    public static final String                        KEY_OCTOPOD          = "octopod";         			//$NON-NLS-1$
-    public static final String                        KEY_SQUID            = "squid";           				//$NON-NLS-1$
-    public static final String                        KEY_CANCROID         = "cancroid";        			//$NON-NLS-1$
-    public static final String                        KEY_SCORPION         = "scorpion";        			//$NON-NLS-1$
-    public static final String                        KEY_ICHTHYOID        = "ichthyoid";       			//$NON-NLS-1$
-    public static final String                        KEY_ARACHNOID        = "arachnoid";       			//$NON-NLS-1$
+    public static final String                        KEY_SNAKEMEN         = "snakemen";                			//$NON-NLS-1$
+    public static final String                        KEY_OCTOPOD          = "octopod";                  			//$NON-NLS-1$
+    public static final String                        KEY_SQUID            = "squid";                      				//$NON-NLS-1$
+    public static final String                        KEY_CANCROID         = "cancroid";                			//$NON-NLS-1$
+    public static final String                        KEY_SCORPION         = "scorpion";                			//$NON-NLS-1$
+    public static final String                        KEY_ICHTHYOID        = "ichthyoid";              			//$NON-NLS-1$
+    public static final String                        KEY_ARACHNOID        = "arachnoid";              			//$NON-NLS-1$
 
     public static final HitLocationTable              HUMANOID;
     public static final HitLocationTable              QUADRUPED;
